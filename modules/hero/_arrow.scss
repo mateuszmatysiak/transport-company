@@ -1,0 +1,48 @@
+.arrow {
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  transition: opacity 0.4s;
+  animation: arrowUpDown 3s infinite both ease;
+
+  @media (orientation: landscape) {
+    left: 10px;
+  }
+
+  @media (min-width: 768px) {
+    left: 40px;
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    background: url("/assets/arrow.svg") no-repeat center/cover;
+  }
+
+  &__element {
+    width: 2px;
+    height: 80px;
+    transform: translate(14px, 10px);
+    background-color: $colorWhite;
+  }
+
+  @keyframes arrowUpDown {
+    0% {
+      transform: translate(0);
+    }
+
+    50% {
+      transform: translate(0, 20px);
+    }
+
+    100% {
+      transform: translate(0);
+    }
+  }
+}
+
+.arrow-inactive {
+  opacity: 0;
+}

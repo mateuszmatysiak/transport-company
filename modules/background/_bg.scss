@@ -10,6 +10,7 @@
   width: 1px;
   background-color: $colorGray;
   opacity: $laneOpacity;
+  z-index: 999;
 }
 
 .bg-first {
@@ -18,7 +19,7 @@
   }
 
   @media (min-width: 1024px) {
-    left: 16%;
+    left: 16.666%;
   }
 }
 
@@ -36,27 +37,27 @@
   }
 
   @media (min-width: 1024px) {
-    left: 32%;
+    left: 33.332%;
   }
 }
 
 .bg-third {
   @media (min-width: 1024px) {
     opacity: $laneOpacity;
-    left: 48%;
+    left: 49.998%;
   }
 }
 
 .bg-fourth {
   @media (min-width: 1024px) {
     opacity: $laneOpacity;
-    left: 64%;
+    left: 66.664%;
   }
 }
 
 .bg-fifth {
   @media (min-width: 1024px) {
     opacity: $laneOpacity;
-    left: 82%;
+    left: 83.33%;
   }
 }

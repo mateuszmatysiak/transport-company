@@ -14,50 +14,70 @@
   <body>
     <main class="container">
       <section class="hero">
-        <aside class="menu-burger">
-          <span class="menu-burger__bar"></span>
-          <span class="menu-burger__bar"></span>
-          <span class="menu-burger__bar"></span>
-        </aside>
-
-        <div class="menu-mobile">
-          <header class="header">
-            <div class="header__logo">
-              <span class="header__item header__item--bold">Matysiak</span>
-              <span class="header__item">Roboty ziemne</span>
-            </div>
-          </header>
-          <ul class="menu-mobile__list">
-            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#">O nas</a></li>
-            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#">Sprzęt</a></li>
-            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#">Realizacje</a></li>
-            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#">Kontakt</a></li>
-          </ul>
-        </div>
-
         <header class="header">
-          <div class="header__logo">
+          <div class="header__logo moveToHeader">
             <span class="header__item header__item--bold">Matysiak</span>
             <span class="header__item">Roboty ziemne</span>
           </div>
+
+          <aside class="menu-burger">
+            <span class="menu-burger__bar"></span>
+            <span class="menu-burger__bar"></span>
+            <span class="menu-burger__bar"></span>
+          </aside>
+
+          <div class="menu-mobile">
+            <header class="header">
+              <div class="header__logo moveToHeader">
+                <span class="header__item header__item--bold">Matysiak</span>
+                <span class="header__item">Roboty ziemne</span>
+              </div>
+            </header>
+
+            <ul class="menu-mobile__list">
+              <li class="menu-mobile__item moveToAbout">
+                O nas
+              </li>
+              <li class="menu-mobile__item moveToEquipment">
+                Sprzęt
+              </li>
+              <li class="menu-mobile__item moveToRealizations">
+                Realizacje
+              </li>
+              <li class="menu-mobile__item moveToContact">
+                Kontakt
+              </li>
+            </ul>
+          </div>
         </header>
+
         <div class="content">
           <div class="content__container">
             <h1 class="content__title">
-              Lorem ipsum dolor sit amet consectetur<span>
-                adipisicing elit.</span
-              >
+              Jesteśmy firmą <span class="content__span"></span>
             </h1>
             <div class="content__description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-              vitae eligendi totam, facere non doloremque! Repellendus inventore
-              cum, repudiandae quas ut corrupti voluptatem, quos sapiente sint
-              pariatur doloribus facilis neque.
+              Podstawowym profilem działalności firmy są roboty ziemne.
+              Specjalizujemy się w wykonywaniu wykopów oraz wyburzeń. Świadczymy
+              także usługi sprzętowo-transportowe.
             </div>
           </div>
         </div>
       </section>
+
+      <section class="about"></section>
+
+      <section class="equipment"></section>
+
+      <section class="realizations"></section>
+
+      <section class="contact"></section>
     </main>
+
+    <div class="arrow">
+      <div class="arrow__icon"></div>
+      <div class="arrow__element"></div>
+    </div>
 
     <div class="background">
       <div class="bg-first"></div>
@@ -67,6 +87,7 @@
       <div class="bg-fifth"></div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <script src="main.js"></script>
   </body>
 </html>

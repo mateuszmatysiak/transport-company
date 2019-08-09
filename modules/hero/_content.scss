@@ -1,24 +1,74 @@
 .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    color: $colorWhite;
-  
-    &__container {
-      margin: 50px 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  color: $colorWhite;
+  cursor: default;
+
+  &__container {
+    margin: 50px 30px 0;
+
+    @media (orientation: landscape) {
+      margin: 0px 30px 0;
     }
-  
-    &__title {
-      font-size: 2.4rem;
-  
-      @media (orientation: landscape) {
-        width: 50%;
-      }
-    }
-  
-    &__description {
-      margin-top: 20px;
-      font-size: 1.2rem;
+
+    @media (min-width: 768px) {
+      margin: 0 60px 0;
     }
   }
+
+  &__title {
+    height: 130px;
+    font-size: 2.4rem;
+
+    @media (orientation: landscape) {
+      width: 80%;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 3.2rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 4.2rem;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 5.2rem;
+    }
+
+    @media (min-width: 1600px) {
+      font-size: 6.2rem;
+    }
+  }
+
+  &__description {
+    margin-top: 25px;
+    font-size: 1.2rem;
+
+    @media (orientation: landscape) {
+      margin-top: 0;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1.6rem;
+      margin-top: 50px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 1.8rem;
+    }
+
+    @media (min-width: 1440px) {
+      width: 80%;
+      font-size: 2rem;
+      margin-top: 100px;
+    }
+
+    @media (min-width: 1600px) {
+      font-size: 2.4rem;
+      margin-top: 140px;
+    }
+  }
+}

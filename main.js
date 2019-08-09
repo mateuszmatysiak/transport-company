@@ -1,4 +1,17 @@
-let isThrottled = false;
+const typeAnimations = {
+  strings: [
+    "z ponad 25 letnim doświadczeniem.",
+    "^1000zatrudniającą najlepszych pracowników na rynku.",
+    "^1000dysponującą dużym placem transportowo-maszynowym."
+  ],
+  typeSpeed: 40,
+  backSpeed: 40,
+  startDelay: 1000,
+  backDelay: 1000,
+  loop: true
+};
+
+const typed = new Typed(".content__span", typeAnimations);
 
 const transformBars = () => {
   if (
@@ -36,6 +49,8 @@ const inActiveMenu = () => {
   }, 200);
 };
 
+let isThrottled = false;
+
 const openMenu = () => {
   if (isThrottled) return;
   isThrottled = true;
@@ -49,4 +64,92 @@ const openMenu = () => {
   }
 };
 
+const scrollTo = element => {
+  window.scroll({
+    behavior: "smooth",
+    left: 0,
+    top: element.offsetTop + 25
+  });
+};
+
+document.querySelectorAll(".moveToHeader").forEach(item =>
+  item.addEventListener("click", () => {
+    scrollTo(document.querySelector(".hero"));
+    inActiveMenu();
+    if (
+      document
+        .querySelector(".menu-burger__bar")
+        .classList.contains("menu-burger__bar--active")
+    ) {
+      transformBars();
+    }
+  })
+);
+
+document.querySelector(".moveToAbout").addEventListener("click", () => {
+  scrollTo(document.querySelector(".about"));
+  inActiveMenu();
+  transformBars();
+});
+
+document.querySelector(".moveToEquipment").addEventListener("click", () => {
+  scrollTo(document.querySelector(".equipment"));
+  inActiveMenu();
+  transformBars();
+});
+
+document.querySelector(".moveToRealizations").addEventListener("click", () => {
+  scrollTo(document.querySelector(".realizations"));
+  inActiveMenu();
+  transformBars();
+});
+
+document.querySelector(".moveToContact").addEventListener("click", () => {
+  scrollTo(document.querySelector(".contact"));
+  inActiveMenu();
+  transformBars();
+});
+
 document.querySelector(".menu-burger").addEventListener("click", openMenu);
+
+window.addEventListener("scroll", () => {
+  if (
+    window.scrollY >
+    Math.floor(document.querySelector(".hero").offsetHeight / 1.3)
+  ) {
+    document.querySelector(".arrow").classList.add("arrow-inactive");
+  }
+});
+
+window.addEventListener("scroll", () => {
+  if (
+    window.scrollY <
+    Math.floor(document.querySelector(".hero").offsetHeight / 1.2)
+  ) {
+    document.querySelector(".menu-mobile").style.backgroundColor = "#171717";
+  }
+  if (
+    window.scrollY >
+    Math.floor(document.querySelector(".about").offsetTop / 1.3)
+  ) {
+    document.querySelector(".menu-mobile").style.backgroundColor = "#442b2b";
+  }
+  if (
+    window.scrollY >
+    Math.floor(document.querySelector(".equipment").offsetTop / 1.2)
+  ) {
+    document.querySelector(".menu-mobile").style.backgroundColor = "#0e1e53";
+  }
+  if (
+    window.scrollY >
+    Math.floor(document.querySelector(".realizations").offsetTop / 1.1)
+  ) {
+    document.querySelector(".menu-mobile").style.backgroundColor = "#2fa79d";
+  }
+  if (
+    window.scrollY >
+    Math.floor(document.querySelector(".contact").offsetTop / 1.1)
+  ) {
+    document.querySelector(".menu-mobile").style.backgroundColor = "#caa708";
+  }
+});
