@@ -1,0 +1,62 @@
+.bg-first,
+.bg-second,
+.bg-third,
+.bg-fourth,
+.bg-fifth {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  min-height: 100vh;
+  width: 1px;
+  background-color: $colorGray;
+  opacity: $laneOpacity;
+}
+
+.bg-first {
+  @media (min-width: 768px) {
+    left: 33%;
+  }
+
+  @media (min-width: 1024px) {
+    left: 16%;
+  }
+}
+
+.bg-second,
+.bg-third,
+.bg-fourth,
+.bg-fifth {
+  opacity: 0;
+}
+
+.bg-second {
+  @media (min-width: 768px) {
+    opacity: $laneOpacity;
+    left: 66%;
+  }
+
+  @media (min-width: 1024px) {
+    left: 32%;
+  }
+}
+
+.bg-third {
+  @media (min-width: 1024px) {
+    opacity: $laneOpacity;
+    left: 48%;
+  }
+}
+
+.bg-fourth {
+  @media (min-width: 1024px) {
+    opacity: $laneOpacity;
+    left: 64%;
+  }
+}
+
+.bg-fifth {
+  @media (min-width: 1024px) {
+    opacity: $laneOpacity;
+    left: 82%;
+  }
+}

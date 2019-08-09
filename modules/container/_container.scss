@@ -1,0 +1,13 @@
+.container {
+    position: relative;
+    background-color: $colorBlack;
+    min-height: 100vh;
+    margin: 10px;
+    @media (min-width: 768px) {
+      margin: 20px;
+    }
+  }
+
+  .body-hidden {
+    overflow: hidden;
+  }
