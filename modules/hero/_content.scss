@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  color: $colorWhite;
   cursor: default;
 
   &__container {
@@ -57,11 +56,11 @@
     }
 
     @media (min-width: 1024px) {
+      width: 80%;
       font-size: 1.8rem;
     }
 
     @media (min-width: 1440px) {
-      width: 80%;
       font-size: 2rem;
       margin-top: 100px;
     }

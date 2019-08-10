@@ -8,6 +8,7 @@
 html {
   font-size: 10px;
   font-family: "Montserrat", sans-serif;
+  color: #fff;
 }
 
 ::-webkit-scrollbar {
@@ -31,7 +32,7 @@ html {
   width: 1px;
   background-color: #6e6e6e;
   opacity: 0.1;
-  z-index: 999;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
@@ -91,16 +92,14 @@ html {
   position: relative;
   background-color: #171717;
   min-height: 100vh;
-  border-left: 10px solid #fff;
-  border-top: 10px solid #fff;
-  border-bottom: 10px solid #fff;
+  border: 10px solid #fff;
+  border-right: none;
 }
 
 @media (min-width: 768px) {
   .container {
-    border-left: 20px solid #fff;
-    border-top: 20px solid #fff;
-    border-bottom: 20px solid #fff;
+    border: 20px solid #fff;
+    border-right: none;
   }
 }
 
@@ -125,7 +124,6 @@ html {
 .header {
   height: 80px;
   width: 100%;
-  color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -135,9 +133,11 @@ html {
 }
 
 .header__logo {
+  position: relative;
   width: 160px;
   padding: 35px 0 0 30px;
   cursor: pointer;
+  z-index: 4;
 }
 
 @media (min-width: 768px) {
@@ -336,7 +336,6 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
-  color: #fff;
   cursor: default;
 }
 
@@ -411,13 +410,13 @@ html {
 
 @media (min-width: 1024px) {
   .content__description {
+    width: 80%;
     font-size: 1.8rem;
   }
 }
 
 @media (min-width: 1440px) {
   .content__description {
-    width: 80%;
     font-size: 2rem;
     margin-top: 100px;
   }
@@ -503,9 +502,122 @@ html {
 }
 
 .equipment {
-  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   min-height: 100vh;
-  background-color: #0e1e53;
+  background: url("/assets/base2blue.png") no-repeat center/cover;
+  background-color: #0F3BCF;
+  cursor: default;
+}
+
+@media (min-width: 768px) {
+  .equipment {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .equipment {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.equipment__item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 100%;
+  min-height: 250px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.1);
+  background: url("/assets/invisible.png") no-repeat center/cover;
+  -webkit-transition: background-image .3s;
+  transition: background-image .3s;
+  z-index: 3;
+}
+
+@media (min-width: 768px) {
+  .equipment__item:nth-child(odd) {
+    border-right: 1px solid rgba(23, 23, 23, 0.1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .equipment__item:not(:nth-child(4n)) {
+    border-right: 1px solid rgba(23, 23, 23, 0.1);
+  }
+}
+
+.equipment__item:hover {
+  -webkit-transition: background-image .3s;
+  transition: background-image .3s;
+}
+
+.equipment__item:nth-child(1):hover {
+  background: url("/assets/truck1.png") no-repeat center/cover;
+}
+
+.equipment__item:nth-child(2):hover {
+  background: url("/assets/truck1.png") no-repeat center/cover;
+}
+
+.equipment__item:nth-child(3):hover {
+  background: url("/assets/truck1.png") no-repeat center/cover;
+}
+
+.equipment__item:nth-child(4):hover {
+  background: url("/assets/truck1.png") no-repeat center/cover;
+}
+
+.equipment__item:nth-child(5):hover {
+  background: url("/assets/truck1.png") no-repeat center/cover;
+}
+
+.equipment__item:nth-child(6):hover {
+  background: url("/assets/truck1.png") no-repeat center/cover;
+}
+
+.equipment__item:nth-child(7):hover {
+  background: url("/assets/truck1.png") no-repeat center/cover;
+}
+
+.equipment__item:nth-child(8):hover {
+  background: url("/assets/truck1.png") no-repeat center/cover;
+}
+
+.equipment__number {
+  font-size: 1.4rem;
+}
+
+.equipment__number::after {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 3px;
+  margin-top: 6px;
+  background-color: #caa708;
+}
+
+.equipment__title {
+  margin: 25px 0 5px 0;
+  font-size: 2.2rem;
+}
+
+.equipment__type {
+  word-spacing: 10px;
+  font-size: 1.2rem;
 }
 
 .about {

@@ -1,5 +1,94 @@
 .equipment {
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
   min-height: 100vh;
+  background: url('/assets/base2blue.png') no-repeat center/cover;
   background-color: $colorBlue;
+  cursor: default;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    min-height: 250px;
+    padding: 20px;
+    border-bottom: 1px solid rgba($colorBlack, .1);
+    background: url('/assets/invisible.png') no-repeat center/cover;
+    transition: background-image .3s;
+    z-index: 3;
+
+    @media (min-width: 768px) {
+      &:nth-child(odd) {
+        border-right: 1px solid rgba($colorBlack, .1);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      &:not(:nth-child(4n)) {
+        border-right: 1px solid rgba($colorBlack, .1);
+      }
+    }
+
+    &:hover {
+      transition: background-image .3s;
+    }
+
+    &:nth-child(1):hover{
+      background: url('/assets/truck1.png') no-repeat center/cover;
+    }
+    &:nth-child(2):hover{
+      background: url('/assets/truck1.png') no-repeat center/cover;
+    }
+    &:nth-child(3):hover{
+      background: url('/assets/truck1.png') no-repeat center/cover;
+    }
+    &:nth-child(4):hover{
+      background: url('/assets/truck1.png') no-repeat center/cover;
+    }
+    &:nth-child(5):hover{
+      background: url('/assets/truck1.png') no-repeat center/cover;
+    }
+    &:nth-child(6):hover{
+      background: url('/assets/truck1.png') no-repeat center/cover;
+    }
+    &:nth-child(7):hover{
+      background: url('/assets/truck1.png') no-repeat center/cover;
+    }
+    &:nth-child(8):hover{
+      background: url('/assets/truck1.png') no-repeat center/cover;
+    }
+  }
+
+  &__number {
+    font-size: 1.4rem;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 3px;
+      margin-top: 6px;
+      background-color: $colorOrange;
+    }
+  }
+
+  &__title {
+    margin: 25px 0 5px 0;
+    font-size: 2.2rem;
+  }
+
+  &__type {
+    word-spacing: 10px;
+    font-size: 1.2rem;
+  }
 }

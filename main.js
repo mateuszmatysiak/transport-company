@@ -68,7 +68,7 @@ const scrollTo = element => {
   window.scroll({
     behavior: "smooth",
     left: 0,
-    top: element.offsetTop + 25
+    top: element.offsetTop,
   });
 };
 
@@ -138,7 +138,7 @@ window.addEventListener("scroll", () => {
     window.scrollY >
     Math.floor(document.querySelector(".equipment").offsetTop / 1.2)
   ) {
-    document.querySelector(".menu-mobile").style.backgroundColor = "#0e1e53";
+    document.querySelector(".menu-mobile").style.backgroundColor = "#0F3BCF";
   }
   if (
     window.scrollY >

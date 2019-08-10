@@ -1,16 +1,17 @@
 .header {
   height: 80px;
   width: 100%;
-  color: $colorWhite;
 
   @media (min-width: 768px) {
     height: 120px;
   }
 
   &__logo {
+    position: relative;
     width: 160px;
     padding: 35px 0 0 30px;
     cursor: pointer;
+    z-index: 4;
 
     @media (min-width: 768px) {
       position: fixed;
