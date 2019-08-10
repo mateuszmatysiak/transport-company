@@ -76,7 +76,7 @@
             justify-self: flex-end;
             padding-right: 40px;
             padding-left: 0;
-            transform: translateY(-50px);
+            transform: translateY(-120px);
             text-align: right;
 
             &::before {
@@ -125,7 +125,7 @@
         }
 
         &:nth-child(4) {
-            transform: translateY(-100px);
+            transform: translateY(-65px);
 
             &::after {
                 @media (min-width: 1024px) {
@@ -193,12 +193,12 @@
         @keyframes barGrowDown {
             from {
                 transform: scaleY(1.8);
-                background-color: $colorBlack;
+                background-color: $colorWhite;
             }
 
             to {
                 transform: scaleY(1);
-                background-color: $colorWhite;
+                background-color: $colorBlack;
             }
         }
     }
@@ -246,6 +246,7 @@
     }
 
     &__more-description {
+        height: 150px;
         opacity: 0;
         font-size: 1.2rem;
         animation: moveUpMoreDescription 2s both;
