@@ -5,27 +5,15 @@
   background: url('/assets/base2blue.png') no-repeat center/cover;
   background-color: $colorBlue;
   cursor: default;
+  padding-bottom: 75px;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
+    padding-bottom: 0;
   }
 
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  &__name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75px;
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-transform: uppercase;
-
-    @media (min-width: 768px) {
-      display: none;
-    }
   }
 
   &__item {
@@ -48,17 +36,14 @@
     }
 
     @media (min-width: 1024px) {
-      &:not(:nth-child(4n)) {
+      &:not(:nth-child(4)),
+      &:not(:nth-child(8)) {
         border-right: 1px solid rgba($colorBlack, .1);
       }
     }
 
     &:hover {
       transition: background-image .3s;
-    }
-
-    &:nth-child(1):hover {
-      background: url('/assets/truck1.png') no-repeat center/cover;
     }
 
     &:nth-child(2):hover {
@@ -88,6 +73,10 @@
     &:nth-child(8):hover {
       background: url('/assets/truck1.png') no-repeat center/cover;
     }
+
+    &:nth-child(9):hover {
+      background: url('/assets/truck1.png') no-repeat center/cover;
+    }
   }
 
   &__number {
@@ -110,7 +99,22 @@
   }
 
   &__type {
+    min-height: 30px;
     word-spacing: 10px;
     font-size: 1.2rem;
+  }
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    display: none;
   }
 }

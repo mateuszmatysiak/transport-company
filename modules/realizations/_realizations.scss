@@ -1,5 +1,257 @@
 .realizations {
+    display: grid;
+    grid-template-rows: 75px 1fr 1fr 1fr;
     width: 100%;
     min-height: 100vh;
     background-color: $colorAqua;
+    overflow: hidden;
+    cursor: default;
+
+    @media (min-width: 768px) {
+        grid-template-rows: 1fr 1fr 1fr;
+        padding-bottom: 0;
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        width: 50%;
+        padding: 20px 0 0 30px;
+        background: url('/assets/invisible.png') no-repeat center/cover;
+        transition: background-image 2s;
+        z-index: 3;
+
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 14%;
+                left: 0;
+                display: block;
+                width: 4px;
+                height: 25%;
+                background-color: $colorBlack;
+                animation: barGrowDown 2s both;
+
+                @media (orientation: landscape) {
+                    top: 10%;
+                    height: 50%;
+                }
+
+                @media (min-width: 768px) {
+                    top: 25%;
+                    height: 45%;
+                }
+
+                @media(min-width: 1024px) {
+                    left: -2px;
+                    top: 43%;
+                    height: 15%;
+                }
+            }
+
+            &::after {
+                display: none;
+            }
+
+            @media(min-width: 1024px) {
+                width: 100%;
+                padding: 20px 50px;
+            }
+        }
+
+        &:nth-child(3) {
+            justify-self: flex-end;
+            padding-right: 40px;
+            padding-left: 0;
+            transform: translateY(-50px);
+            text-align: right;
+
+            &::before {
+                display: none;
+
+                @media (min-width: 1024px) {
+                    display: block;
+                    left: -3px;
+                }
+            }
+
+            &::after {
+                display: block;
+                top: 12%;
+                left: auto;
+                right: 10px;
+
+                @media (min-width: 768px) {
+                    right: 0;
+                }
+
+                @media (min-width: 1024px) {
+                    display: none;
+                }
+            }
+
+            @media(min-width: 1024px) {
+                padding: 20px 50px;
+                transform: translateY(0);
+                text-align: left;
+            }
+        }
+
+        &:nth-child(2) {
+            &::after {
+                @media (min-width: 1024px) {
+                    display: none;
+                }
+            }
+
+            &::before {
+                @media (min-width: 1024px) {
+                    left: 0;
+                }
+            }
+        }
+
+        &:nth-child(4) {
+            transform: translateY(-100px);
+
+            &::after {
+                @media (min-width: 1024px) {
+                    display: none;
+
+                }
+            }
+
+            @media (min-width: 1024px) {
+                transform: translateY(0);
+            }
+        }
+
+        &:hover {
+            background: url('/assets/base1aqua.png') no-repeat center/cover;
+            transition: background-image 1s;
+        }
+
+        &:hover .realizations__more-description {
+            opacity: 1;
+            animation: moveDownMoreDescription 2s both;
+        }
+
+        @keyframes moveDownMoreDescription {
+            from {
+                opacity: 0;
+                transform: translateY(0)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(40px)
+            }
+        }
+
+        @keyframes moveUpMoreDescription {
+            from {
+                opacity: 1;
+                transform: translateY(40px)
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(0)
+            }
+        }
+
+        &:hover::before,
+        &:hover::after {
+            animation: barGrowUp 2s both;
+        }
+
+        @keyframes barGrowUp {
+            from {
+                transform: scaleY(1);
+                background-color: $colorBlack;
+            }
+
+            to {
+                transform: scaleY(1.8);
+                background-color: $colorWhite;
+            }
+        }
+
+        @keyframes barGrowDown {
+            from {
+                transform: scaleY(1.8);
+                background-color: $colorBlack;
+            }
+
+            to {
+                transform: scaleY(1);
+                background-color: $colorWhite;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        margin-bottom: 10px;
+
+        @media (min-width: 768px) {
+            font-size: 3.2rem;
+        }
+    }
+
+    &__description {
+        font-size: 1.2rem;
+
+        @media (min-width: 768px) {
+            font-size: 1.4rem;
+        }
+
+        @media (min-width: 1024px) {
+            &::after {
+                counter-increment: realizations;
+                content: '0'counter(realizations);
+                position: absolute;
+                top: 65%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 26rem;
+                color: rgba(lighten($colorAqua, 5%), .2);
+            }
+        }
+
+        @media (min-width: 1440px) {
+            &::after {
+                font-size: 32rem;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            &::after {
+                font-size: 36rem;
+            }
+        }
+    }
+
+    &__more-description {
+        opacity: 0;
+        font-size: 1.2rem;
+        animation: moveUpMoreDescription 2s both;
+
+        @media (min-width: 1024px) {
+            font-size: 1.4rem;
+        }
+    }
 }
