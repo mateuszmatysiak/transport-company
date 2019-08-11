@@ -1,9 +1,9 @@
 .container {
   position: relative;
-  background-color: $colorBlack;
   min-height: 100vh;
   border: 10px solid $colorWhite;
   border-right: none;
+  background-color: $colorBlack;
 
   @media (min-width: 768px) {
     border: 20px solid $colorWhite;

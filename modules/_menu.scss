@@ -17,9 +17,9 @@
   }
 
   &__bar {
-    margin: 3px 0;
     width: 65%;
     height: 3px;
+    margin: 3px 0;
     background-color: $colorWhite;
     transition: transform 0.4s;
 
@@ -47,31 +47,28 @@
     }
   }
 
-  &::before {
-    content: "";
-    position: fixed;
-    width: 10px;
-    top: 0;
-    right: 0;
-    height: 42px;
-    background-color: $colorWhite;
-  }
-
-  &::after {
-    content: "";
-    position: fixed;
-    top: 80px;
-    right: 0;
-    width: 10px;
-    height: 100vh;
-    background-color: $colorWhite;
-  }
-
   &::before,
   &::after {
+    content: "";
+    position: fixed;
+    right: 0;
+    width: 10px;
+    background-color: $colorWhite;
+    pointer-events: none;
+
     @media (min-width: 768px) {
       display: none;
     }
+  }
+
+  &::before {
+    top: 0;
+    height: 42px;
+  }
+
+  &::after {
+    top: 80px;
+    height: 100vh;
   }
 }
 
@@ -86,10 +83,10 @@
   bottom: 0;
   right: 0;
   opacity: 0;
-  background-color: $colorBlack;
   border-left: 10px solid $colorWhite;
   border-top: 10px solid $colorWhite;
   border-bottom: 10px solid $colorWhite;
+  background-color: $colorBlack;
   z-index: 998;
   transition: opacity 0.4s;
 

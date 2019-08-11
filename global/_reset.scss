@@ -15,9 +15,9 @@ body {
 }
 
 ::-webkit-scrollbar {
-  // display: none;
-  background-color: $colorWhite;
+  display: none;
   width: 20px;
+  background-color: $colorWhite;
 }
 
 ::-webkit-scrollbar-thumb {

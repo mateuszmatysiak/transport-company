@@ -2,10 +2,10 @@
   display: grid;
   grid-template-columns: 1fr;
   min-height: 100vh;
+  padding-bottom: 75px;
   background: url('/assets/base2blue.png') no-repeat center/cover;
   background-color: $colorBlue;
   cursor: default;
-  padding-bottom: 75px;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
@@ -100,8 +100,8 @@
 
   &__type {
     min-height: 30px;
-    word-spacing: 10px;
     font-size: 1.2rem;
+    word-spacing: 10px;
   }
 }
 
