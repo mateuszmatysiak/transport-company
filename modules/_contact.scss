@@ -1,6 +1,7 @@
 .contact {
   width: 100%;
   min-height: 100vh;
+  border-bottom: 10px solid $colorWhite;
   background-color: $colorOrange;
   cursor: default;
 
@@ -8,6 +9,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    border-bottom: 20px solid $colorWhite;
   }
 
   @media (min-width: 1440px) {

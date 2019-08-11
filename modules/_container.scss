@@ -2,11 +2,14 @@
   position: relative;
   min-height: 100vh;
   border: 10px solid $colorWhite;
+  border-top: none;
   border-right: none;
+  border-bottom: none;
   background-color: $colorBlack;
 
   @media (min-width: 768px) {
     border: 20px solid $colorWhite;
+    border-top: none;
     border-right: none;
   }
 }

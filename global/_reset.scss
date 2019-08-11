@@ -8,18 +8,24 @@ html {
   font-size: 10px;
   font-family: "Montserrat", sans-serif;
   color: $colorWhite;
+
+  @media (min-width: 768px) {
+    overflow: hidden;
+  }
 }
 
 body {
   counter-reset: realizations;
 }
 
-::-webkit-scrollbar {
-  display: none;
-  width: 20px;
-  background-color: $colorWhite;
-}
+// Default scroll commands
 
-::-webkit-scrollbar-thumb {
-  background-color: $colorBlack;
-}
+// ::-webkit-scrollbar {
+//   display: none;
+//   width: 20px;
+//   background-color: $colorWhite;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background-color: $colorBlack;
+// }
