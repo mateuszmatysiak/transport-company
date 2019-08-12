@@ -244,6 +244,12 @@ body {
   padding: 35px 0 0 30px;
   cursor: pointer;
   z-index: 5;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.header__logo:hover {
+  opacity: .5;
 }
 
 @media (min-width: 768px) {
