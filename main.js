@@ -249,3 +249,16 @@ if (mediaQueriesMin768px.matches) {
     }
   });
 }
+
+// Change background color menu depending on the selected section
+
+document.querySelectorAll('.menu-mobile__item').forEach(item => item.addEventListener('mousemove', (e) => {
+  e.target.parentNode.parentNode.style.backgroundColor = e.target.dataset.color
+}));
+
+// Change background color menu depending on default color of section
+
+document.querySelector('.menu-mobile').addEventListener('mousemove', (e) => {
+  const section = e.target.parentElement.parentElement.parentElement.children;
+  e.target.style.backgroundColor = section[currentIndexSection].dataset.color;
+})

@@ -112,7 +112,7 @@
   border-bottom: 10px solid $colorWhite;
   background-color: $colorBlack;
   z-index: 998;
-  transition: opacity 0.4s;
+  transition: opacity .4s, background-color .4s;
 
   @media (min-width: 768px) {
     border: 20px solid $colorWhite;
@@ -189,7 +189,7 @@
       text-transform: uppercase;
 
       &-text {
-        animation: showMenuResult 2.5s .5s both;
+        animation: showMenuResult .5s .5s linear both;
       }
 
       @keyframes showMenuResult {

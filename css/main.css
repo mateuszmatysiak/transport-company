@@ -407,8 +407,8 @@ body {
   border-bottom: 10px solid #fff;
   background-color: #171717;
   z-index: 998;
-  -webkit-transition: opacity 0.4s;
-  transition: opacity 0.4s;
+  -webkit-transition: opacity .4s, background-color .4s;
+  transition: opacity .4s, background-color .4s;
 }
 
 @media (min-width: 768px) {
@@ -498,8 +498,8 @@ body {
     text-transform: uppercase;
   }
   .menu-desktop__item-text {
-    -webkit-animation: showMenuResult 2.5s .5s both;
-            animation: showMenuResult 2.5s .5s both;
+    -webkit-animation: showMenuResult .5s .5s linear both;
+            animation: showMenuResult .5s .5s linear both;
   }
   @-webkit-keyframes showMenuResult {
     from {
