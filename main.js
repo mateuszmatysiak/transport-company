@@ -260,5 +260,7 @@ document.querySelectorAll('.menu-mobile__item').forEach(item => item.addEventLis
 
 document.querySelector('.menu-mobile').addEventListener('mousemove', (e) => {
   const section = e.target.parentElement.parentElement.parentElement.children;
-  e.target.style.backgroundColor = section[currentIndexSection].dataset.color;
+  try {
+    e.target.style.backgroundColor = section[currentIndexSection].dataset.color;
+  } catch(e){}
 })
