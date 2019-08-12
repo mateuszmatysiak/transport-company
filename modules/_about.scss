@@ -1,5 +1,55 @@
 .about {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    min-height: 100vh;
     background-color: $colorBrown;
+
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+
+        @media (min-width: 768px) {
+            justify-content: center;
+        }
+    }
+
+    &__title {
+        padding: 0 20px;
+        font-size: 2.2rem;
+    }
+
+    &__description {
+        padding: 20px 20px 40px;
+        font-size: 1.4rem;
+    }
+
+    &__button {
+        align-self: center;
+        margin: 0 30px 30px;
+        padding: 10px 15px;
+        border: 2px solid $colorWhite;
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    @keyframes spinAroundDiv {
+        from {
+            transform: rotate(0)
+        }
+
+        to {
+            transform: rotate(360deg)
+        }
+    }
 }
