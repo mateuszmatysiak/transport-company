@@ -145,7 +145,6 @@ moveToAbout.addEventListener("click", () => {
   scrollMove(1, "20%", color.brown);
   inActiveMenu();
   transformBars();
-  // listSpan[0].classList.add('menu-desktop__item-text');
 });
 
 moveToEquipment.addEventListener("click", () => {
@@ -153,7 +152,6 @@ moveToEquipment.addEventListener("click", () => {
   scrollMove(2, "40%", color.blue);
   inActiveMenu();
   transformBars();
-  // listSpan[1].classList.add('menu-desktop__item-text');
 });
 
 moveToRealizations.addEventListener("click", () => {
@@ -161,7 +159,6 @@ moveToRealizations.addEventListener("click", () => {
   scrollMove(3, "60%", color.aqua);
   inActiveMenu();
   transformBars();
-  // listSpan[2].classList.add('menu-desktop__item-text');
 });
 
 moveToContact.addEventListener("click", () => {
@@ -169,7 +166,6 @@ moveToContact.addEventListener("click", () => {
   scrollMove(4, "calc(100% - 140px)", color.orange);
   inActiveMenu();
   transformBars();
-  // listSpan[0].classList.add('menu-desktop__item-text');
 });
 
 // Open menu
@@ -202,11 +198,11 @@ if (mediaQueriesMin768px.matches) {
     });
 
     document.addEventListener("scroll", (e) => {
-      const listSpan = e.target.scrollingElement.lastElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.children;
+      const listDesktopItems = e.target.scrollingElement.lastElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.children;
       const activeDesktopMenu = (number) => {
         document.querySelector('.menu-desktop').classList.add('menu-desktop--active')
         document.querySelectorAll('.menu-desktop__item').forEach(item => item.classList.remove('menu-desktop__item-text'));
-        listSpan[number].classList.add('menu-desktop__item-text');
+        listDesktopItems[number].classList.add('menu-desktop__item-text');
       }
 
       if (currentIndexSection === 0) {
@@ -227,7 +223,7 @@ if (mediaQueriesMin768px.matches) {
         activeDesktopMenu(3)
       }
     });
-  }); // Bgc color in menu
+  }); // Set background color in open menu
 } else if (mediaQueriesMax768px.matches) {
   document.addEventListener("scroll", () => {
     if (window.scrollY < document.querySelector(".about").offsetTop / 1.2) {
