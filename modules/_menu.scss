@@ -21,7 +21,8 @@
     height: 3px;
     margin: 3px 0;
     background-color: $colorWhite;
-    transition: transform 0.4s, width .2s;;
+    transition: transform 0.4s, width .2s;
+    ;
 
     @media (min-width: 768px) {
       width: 90%;
@@ -151,4 +152,68 @@
       font-size: 4.2rem;
     }
   }
+}
+
+.menu-desktop {
+  position: relative;
+  opacity: 0;
+  z-index: 6;
+  cursor: default;
+
+  @media (min-width: 768px) {
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 90px;
+    left: 230px;
+    width: 3px;
+    height: 18px;
+    background-color: $colorBlack;
+    animation: showBar 2s 1s both;
+  }
+
+  &__item {
+    opacity: 0;
+
+    @media (min-width: 768px) {
+      position: fixed;
+      top: 90px;
+      left: 230px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      &-text {
+        animation: showMenuResult 2.5s .5s both;
+      }
+
+      @keyframes showMenuResult {
+        from {
+          transform: translateX(0);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateX(20px);
+          opacity: 1;
+        }
+      }
+    }
+
+    @keyframes showBar {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
 }

@@ -46,8 +46,8 @@ const typed = new Typed(".content__span", typeAnimations);
 const transformBars = () => {
   if (
     !document
-      .querySelectorAll(".menu-burger__bar")
-      .forEach(bar => bar.classList.contains("menu-burger__bar--active"))
+    .querySelectorAll(".menu-burger__bar")
+    .forEach(bar => bar.classList.contains("menu-burger__bar--active"))
   ) {
     document
       .querySelectorAll(".menu-burger__bar")
@@ -127,10 +127,13 @@ moveToHeader.forEach(item =>
     scrollTo(document.querySelector(".hero"));
     scrollMove(0, "20px", color.black);
     inActiveMenu();
+    document
+      .querySelector(".menu-desktop")
+      .classList.remove("menu-desktop--active");
     if (
       document
-        .querySelector(".menu-burger__bar")
-        .classList.contains("menu-burger__bar--active")
+      .querySelector(".menu-burger__bar")
+      .classList.contains("menu-burger__bar--active")
     ) {
       transformBars();
     }
@@ -142,6 +145,7 @@ moveToAbout.addEventListener("click", () => {
   scrollMove(1, "20%", color.brown);
   inActiveMenu();
   transformBars();
+  // listSpan[0].classList.add('menu-desktop__item-text');
 });
 
 moveToEquipment.addEventListener("click", () => {
@@ -149,6 +153,7 @@ moveToEquipment.addEventListener("click", () => {
   scrollMove(2, "40%", color.blue);
   inActiveMenu();
   transformBars();
+  // listSpan[1].classList.add('menu-desktop__item-text');
 });
 
 moveToRealizations.addEventListener("click", () => {
@@ -156,6 +161,7 @@ moveToRealizations.addEventListener("click", () => {
   scrollMove(3, "60%", color.aqua);
   inActiveMenu();
   transformBars();
+  // listSpan[2].classList.add('menu-desktop__item-text');
 });
 
 moveToContact.addEventListener("click", () => {
@@ -163,6 +169,7 @@ moveToContact.addEventListener("click", () => {
   scrollMove(4, "calc(100% - 140px)", color.orange);
   inActiveMenu();
   transformBars();
+  // listSpan[0].classList.add('menu-desktop__item-text');
 });
 
 // Open menu
@@ -194,17 +201,32 @@ if (mediaQueriesMin768px.matches) {
       block: "start"
     });
 
-    if (currentIndexSection === 0) {
-      scrollMove(0, "20px", color.black);
-    } else if (currentIndexSection === 1) {
-      scrollMove(1, "20%", color.brown);
-    } else if (currentIndexSection === 2) {
-      scrollMove(2, "40%", color.blue);
-    } else if (currentIndexSection === 3) {
-      scrollMove(3, "60%", color.aqua);
-    } else if (currentIndexSection === 4) {
-      scrollMove(4, "calc(100% - 140px)", color.orange);
-    }
+    document.addEventListener("scroll", (e) => {
+      const listSpan = e.target.scrollingElement.lastElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.children;
+      const activeDesktopMenu = (number) => {
+        document.querySelector('.menu-desktop').classList.add('menu-desktop--active')
+        document.querySelectorAll('.menu-desktop__item').forEach(item => item.classList.remove('menu-desktop__item-text'));
+        listSpan[number].classList.add('menu-desktop__item-text');
+      }
+
+      if (currentIndexSection === 0) {
+        scrollMove(0, "20px", color.black);
+        document.querySelectorAll('.menu-desktop__item').forEach(item => item.classList.remove('menu-desktop__item-text'));
+        document.querySelector('.menu-desktop').classList.remove('menu-desktop--active')
+      } else if (currentIndexSection === 1) {
+        scrollMove(1, "20%", color.brown);
+        activeDesktopMenu(0)
+      } else if (currentIndexSection === 2) {
+        scrollMove(2, "40%", color.blue);
+        activeDesktopMenu(1)
+      } else if (currentIndexSection === 3) {
+        scrollMove(3, "60%", color.aqua);
+        activeDesktopMenu(2)
+      } else if (currentIndexSection === 4) {
+        scrollMove(4, "calc(100% - 140px)", color.orange);
+        activeDesktopMenu(3)
+      }
+    });
   }); // Bgc color in menu
 } else if (mediaQueriesMax768px.matches) {
   document.addEventListener("scroll", () => {

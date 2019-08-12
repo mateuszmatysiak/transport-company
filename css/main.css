@@ -453,6 +453,92 @@ body {
   }
 }
 
+.menu-desktop {
+  position: relative;
+  opacity: 0;
+  z-index: 6;
+  cursor: default;
+}
+
+@media (min-width: 768px) {
+  .menu-desktop--active {
+    opacity: 1;
+  }
+}
+
+.menu-desktop::before {
+  content: '';
+  position: fixed;
+  top: 90px;
+  left: 230px;
+  width: 3px;
+  height: 18px;
+  background-color: #171717;
+  -webkit-animation: showBar 2s 1s both;
+          animation: showBar 2s 1s both;
+}
+
+.menu-desktop__item {
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .menu-desktop__item {
+    position: fixed;
+    top: 90px;
+    left: 230px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .menu-desktop__item-text {
+    -webkit-animation: showMenuResult 2.5s .5s both;
+            animation: showMenuResult 2.5s .5s both;
+  }
+  @-webkit-keyframes showMenuResult {
+    from {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 0;
+    }
+    to {
+      -webkit-transform: translateX(20px);
+              transform: translateX(20px);
+      opacity: 1;
+    }
+  }
+  @keyframes showMenuResult {
+    from {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 0;
+    }
+    to {
+      -webkit-transform: translateX(20px);
+              transform: translateX(20px);
+      opacity: 1;
+    }
+  }
+}
+
+@-webkit-keyframes showBar {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showBar {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .content {
   display: -webkit-box;
   display: -ms-flexbox;
