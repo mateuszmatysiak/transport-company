@@ -828,6 +828,7 @@ body {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   height: 100%;
+  cursor: default;
 }
 
 @media (min-width: 768px) {
@@ -835,6 +836,11 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    padding-right: 40px;
+  }
+  .about__wrapper:nth-child(2) {
+    padding-right: 0;
+    padding-left: 40px;
   }
 }
 
@@ -843,9 +849,53 @@ body {
   font-size: 2.2rem;
 }
 
+@media (min-width: 768px) {
+  .about__title {
+    padding: 0 0 20px 20px;
+    font-size: 2.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about__title {
+    font-size: 3.2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .about__title {
+    padding: 0 0 40px 20px;
+    font-size: 3.6rem;
+  }
+}
+
 .about__description {
   padding: 20px 20px 40px;
   font-size: 1.4rem;
+}
+
+@media (min-width: 768px) {
+  .about__description {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about__description {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .about__description {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .about__description {
+    font-size: 2.4rem;
+  }
 }
 
 .about__button {
@@ -855,31 +905,47 @@ body {
   margin: 0 30px 30px;
   padding: 10px 15px;
   border: 2px solid #fff;
-  font-size: .8rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-transition: background-color .4s, color .4s;
+  transition: background-color .4s, color .4s;
 }
 
-@-webkit-keyframes spinAroundDiv {
-  from {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+.about__button:hover {
+  background-color: #fff;
+  color: #442b2b;
+}
+
+@media (min-width: 768px) {
+  .about__button {
+    padding: 10px 25px;
+    margin: 0 30px 50px;
+    font-size: 1.2rem;
   }
 }
 
-@keyframes spinAroundDiv {
-  from {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+@media (min-width: 1024px) {
+  .about__button {
+    font-size: 1.6rem;
   }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+}
+
+@media (min-width: 1440px) {
+  .about__button {
+    margin: 0 30px 70px;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .about__button {
+    font-size: 2.2rem;
   }
 }
 

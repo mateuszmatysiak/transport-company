@@ -13,9 +13,9 @@ const color = {
 
 const moveToHeader = document.querySelectorAll(".moveToHeader");
 const moveToAbout = document.querySelector(".moveToAbout");
-const moveToEquipment = document.querySelector(".moveToEquipment");
-const moveToRealizations = document.querySelector(".moveToRealizations");
-const moveToContact = document.querySelector(".moveToContact");
+const moveToEquipment = document.querySelectorAll(".moveToEquipment");
+const moveToRealizations = document.querySelectorAll(".moveToRealizations");
+const moveToContact = document.querySelectorAll(".moveToContact");
 const menuMobile = document.querySelector(".menu-mobile");
 const scrollBar = document.querySelector(".scroll__bar");
 const sections = document.querySelectorAll("section");
@@ -147,26 +147,26 @@ moveToAbout.addEventListener("click", () => {
   transformBars();
 });
 
-moveToEquipment.addEventListener("click", () => {
+moveToEquipment.forEach(item => item.addEventListener("click", () => {
   scrollTo(document.querySelector(".equipment"));
   scrollMove(2, "40%", color.blue);
   inActiveMenu();
   transformBars();
-});
+}));
 
-moveToRealizations.addEventListener("click", () => {
+moveToRealizations.forEach(item => item.addEventListener("click", () => {
   scrollTo(document.querySelector(".realizations"));
   scrollMove(3, "60%", color.aqua);
   inActiveMenu();
   transformBars();
-});
+}));
 
-moveToContact.addEventListener("click", () => {
+moveToContact.forEach(item => item.addEventListener("click", () => {
   scrollTo(document.querySelector(".contact"));
   scrollMove(4, "calc(100% - 140px)", color.orange);
   inActiveMenu();
   transformBars();
-});
+}));
 
 // Open menu
 

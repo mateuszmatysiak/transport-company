@@ -16,20 +16,57 @@
         flex-direction: column;
         justify-content: space-around;
         height: 100%;
+        cursor: default;
 
         @media (min-width: 768px) {
             justify-content: center;
+            padding-right: 40px;
+
+            &:nth-child(2){
+                padding-right: 0;
+                padding-left: 40px;
+            }
         }
     }
 
     &__title {
         padding: 0 20px;
         font-size: 2.2rem;
+
+        @media (min-width: 768px) {
+            padding: 0 0 20px 20px;
+            font-size: 2.4rem;
+        }
+
+        @media (min-width: 1024px) {
+            font-size: 3.2rem;
+        }
+
+        @media (min-width: 1440px) {
+            padding: 0 0 40px 20px;
+            font-size: 3.6rem;
+        }
     }
 
     &__description {
         padding: 20px 20px 40px;
         font-size: 1.4rem;
+
+        @media (min-width: 768px) {
+            font-size: 1.6rem;
+        }
+
+        @media (min-width: 1024px) {
+            font-size: 1.8rem;
+        }
+
+        @media (min-width: 1440px) {
+            font-size: 2.2rem;
+        }
+
+        @media (min-width: 1600px) {
+            font-size: 2.4rem;
+        }
     }
 
     &__button {
@@ -37,19 +74,37 @@
         margin: 0 30px 30px;
         padding: 10px 15px;
         border: 2px solid $colorWhite;
-        font-size: .8rem;
+        font-size: 1rem;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
-    }
+        box-sizing: content-box;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: background-color .4s, color .4s;
 
-    @keyframes spinAroundDiv {
-        from {
-            transform: rotate(0)
+        &:hover {
+            background-color: $colorWhite;
+            color: $colorBrown;
         }
 
-        to {
-            transform: rotate(360deg)
+        @media (min-width: 768px) {
+            padding: 10px 25px;
+            margin: 0 30px 50px;
+            font-size: 1.2rem;
+        }
+
+        @media (min-width: 1024px) {
+            font-size: 1.6rem;
+        }
+
+        @media (min-width: 1440px) {
+            margin: 0 30px 70px;
+            font-size: 2rem;
+        }
+
+        @media (min-width: 1600px) {
+            font-size: 2.2rem;
         }
     }
 }
