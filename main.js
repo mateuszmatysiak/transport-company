@@ -127,14 +127,8 @@ moveToHeader.forEach(item =>
     scrollTo(document.querySelector(".hero"));
     scrollMove(0, "20px", color.black);
     inActiveMenu();
-    document
-      .querySelector(".menu-desktop")
-      .classList.remove("menu-desktop--active");
-    if (
-      document
-      .querySelector(".menu-burger__bar")
-      .classList.contains("menu-burger__bar--active")
-    ) {
+    document.querySelector(".menu-desktop").classList.remove("menu-desktop--active");
+    if (document.querySelector(".menu-burger__bar").classList.contains("menu-burger__bar--active")) {
       transformBars();
     }
   })
@@ -151,21 +145,27 @@ moveToEquipment.forEach(item => item.addEventListener("click", () => {
   scrollTo(document.querySelector(".equipment"));
   scrollMove(2, "40%", color.blue);
   inActiveMenu();
-  transformBars();
+  if (document.querySelector(".menu-burger__bar").classList.contains("menu-burger__bar--active")) {
+    transformBars();
+  }
 }));
 
 moveToRealizations.forEach(item => item.addEventListener("click", () => {
   scrollTo(document.querySelector(".realizations"));
   scrollMove(3, "60%", color.aqua);
   inActiveMenu();
-  transformBars();
+  if (document.querySelector(".menu-burger__bar").classList.contains("menu-burger__bar--active")) {
+    transformBars();
+  }
 }));
 
 moveToContact.forEach(item => item.addEventListener("click", () => {
   scrollTo(document.querySelector(".contact"));
   scrollMove(4, "calc(100% - 140px)", color.orange);
   inActiveMenu();
-  transformBars();
+  if (document.querySelector(".menu-burger__bar").classList.contains("menu-burger__bar--active")) {
+    transformBars();
+  }
 }));
 
 // Open menu
@@ -262,5 +262,5 @@ document.querySelector('.menu-mobile').addEventListener('mousemove', (e) => {
   const section = e.target.parentElement.parentElement.parentElement.children;
   try {
     e.target.style.backgroundColor = section[currentIndexSection].dataset.color;
-  } catch(e){}
+  } catch (e) {}
 })
