@@ -240,8 +240,8 @@ body {
 
 .header__logo {
   position: relative;
-  width: 160px;
-  padding: 35px 0 0 30px;
+  width: 130px;
+  margin: 35px 0 0 30px;
   cursor: pointer;
   z-index: 5;
   -webkit-transition: opacity .3s;
@@ -255,8 +255,7 @@ body {
 @media (min-width: 768px) {
   .header__logo {
     position: fixed;
-    width: 190px;
-    padding: 60px 0 0 60px;
+    margin: 60px 0 0 60px;
   }
 }
 
