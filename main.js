@@ -175,12 +175,12 @@ document.querySelector(".menu-burger").addEventListener("click", openMenu);
 // Scrolling from section to section
 
 if (mediaQueriesMin768px.matches) {
-  document.addEventListener("mousewheel", e => {
+  document.addEventListener("wheel", e => {
     if (isThrottledScroll) return;
     isThrottledScroll = true;
     setTimeout(() => (isThrottledScroll = false), 1000);
 
-    const direction = e.wheelDelta < 0 ? 1 : -1;
+    const direction = e.deltaY > 0 ? 1 : -1;
 
     if (direction === 1) {
       const isLastSection = currentIndexSection === sections.length - 1;
