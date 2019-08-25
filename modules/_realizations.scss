@@ -30,15 +30,15 @@
         z-index: 3;
 
         &:hover {
-            background: url('../assets/img/realizations_01.png') no-repeat center/cover;
+            background: url('../assets/img/realizations_03.png') no-repeat center/cover;
             transition: background-image 1s;
 
             &:nth-child(2) {
-                background: url('../assets/img/realizations_02.png') no-repeat center/cover;
+                background: url('../assets/img/realizations_01.png') no-repeat center/cover;
             }
 
             &:nth-child(3) {
-                background: url('../assets/img/realizations_03.png') no-repeat center/cover;
+                background: url('../assets/img/realizations_02.png') no-repeat center/cover;
             }
         }
 
