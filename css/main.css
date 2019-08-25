@@ -655,7 +655,7 @@ body {
       grid-template-columns: 1fr;
   min-height: 100vh;
   padding-bottom: 75px;
-  background: url("../assets/base1blue.png") no-repeat center/cover;
+  background: url("../assets/img/equipment_bg.png") no-repeat center/cover;
   background-color: #0F3BCF;
   cursor: default;
 }
@@ -691,7 +691,7 @@ body {
   min-height: 250px;
   padding: 20px;
   border-bottom: 1px solid rgba(23, 23, 23, 0.1);
-  background: url("../assets/invisible.png") no-repeat center/cover;
+  background: url("../assets/img/invisible.png") no-repeat center/cover;
   -webkit-transition: background-image .3s;
   transition: background-image .3s;
   z-index: 3;
@@ -715,35 +715,35 @@ body {
 }
 
 .equipment__item:nth-child(2):hover {
-  background: url("../assets/truck1.png") no-repeat center/cover;
+  background: url("../assets/img/truck_01.png") no-repeat center/cover;
 }
 
 .equipment__item:nth-child(3):hover {
-  background: url("../assets/truck1.png") no-repeat center/cover;
+  background: url("../assets/img/truck_02.png") no-repeat center/cover;
 }
 
 .equipment__item:nth-child(4):hover {
-  background: url("../assets/truck1.png") no-repeat center/cover;
+  background: url("../assets/img/truck_03.png") no-repeat center/cover;
 }
 
 .equipment__item:nth-child(5):hover {
-  background: url("../assets/truck1.png") no-repeat center/cover;
+  background: url("../assets/img/truck_01.png") no-repeat center/cover;
 }
 
 .equipment__item:nth-child(6):hover {
-  background: url("../assets/truck1.png") no-repeat center/cover;
+  background: url("../assets/img/truck_02.png") no-repeat center/cover;
 }
 
 .equipment__item:nth-child(7):hover {
-  background: url("../assets/truck1.png") no-repeat center/cover;
+  background: url("../assets/img/truck_03.png") no-repeat center/cover;
 }
 
 .equipment__item:nth-child(8):hover {
-  background: url("../assets/truck1.png") no-repeat center/cover;
+  background: url("../assets/img/excavator_01.png") no-repeat center/cover;
 }
 
 .equipment__item:nth-child(9):hover {
-  background: url("../assets/truck1.png") no-repeat center/cover;
+  background: url("../assets/img/excavator_02.png") no-repeat center/cover;
 }
 
 .equipment__number {
@@ -992,16 +992,24 @@ body {
   position: relative;
   width: 100%;
   padding: 20px 30px 0;
-  background: url("../assets/invisible.png") no-repeat center/cover;
+  background: url("../assets/img/invisible.png") no-repeat center/cover;
   -webkit-transition: background-image 2s;
   transition: background-image 2s;
   z-index: 3;
 }
 
 .realizations__item:hover {
-  background: url("../assets/base1aqua.png") no-repeat center/cover;
+  background: url("../assets/img/realizations_01.png") no-repeat center/cover;
   -webkit-transition: background-image 1s;
   transition: background-image 1s;
+}
+
+.realizations__item:hover:nth-child(2) {
+  background: url("../assets/img/realizations_02.png") no-repeat center/cover;
+}
+
+.realizations__item:hover:nth-child(3) {
+  background: url("../assets/img/realizations_03.png") no-repeat center/cover;
 }
 
 .realizations__item:hover .realizations-wrapper {

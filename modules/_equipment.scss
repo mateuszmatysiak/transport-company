@@ -3,7 +3,7 @@
   grid-template-columns: 1fr;
   min-height: 100vh;
   padding-bottom: 75px;
-  background: url('../assets/base1blue.png') no-repeat center/cover;
+  background: url('../assets/img/equipment_bg.png') no-repeat center/cover;
   background-color: $colorBlue;
   cursor: default;
 
@@ -25,7 +25,7 @@
     min-height: 250px;
     padding: 20px;
     border-bottom: 1px solid rgba($colorBlack, .1);
-    background: url('../assets/invisible.png') no-repeat center/cover;
+    background: url('../assets/img/invisible.png') no-repeat center/cover;
     transition: background-image .3s;
     z-index: 3;
 
@@ -48,35 +48,35 @@
     }
 
     &:nth-child(2):hover {
-      background: url('../assets/truck1.png') no-repeat center/cover;
+      background: url('../assets/img/truck_01.png') no-repeat center/cover;
     }
 
     &:nth-child(3):hover {
-      background: url('../assets/truck1.png') no-repeat center/cover;
+      background: url('../assets/img/truck_02.png') no-repeat center/cover;
     }
 
     &:nth-child(4):hover {
-      background: url('../assets/truck1.png') no-repeat center/cover;
+      background: url('../assets/img/truck_03.png') no-repeat center/cover;
     }
 
     &:nth-child(5):hover {
-      background: url('../assets/truck1.png') no-repeat center/cover;
+      background: url('../assets/img/truck_01.png') no-repeat center/cover;
     }
 
     &:nth-child(6):hover {
-      background: url('../assets/truck1.png') no-repeat center/cover;
+      background: url('../assets/img/truck_02.png') no-repeat center/cover;
     }
 
     &:nth-child(7):hover {
-      background: url('../assets/truck1.png') no-repeat center/cover;
+      background: url('../assets/img/truck_03.png') no-repeat center/cover;
     }
 
     &:nth-child(8):hover {
-      background: url('../assets/truck1.png') no-repeat center/cover;
+      background: url('../assets/img/excavator_01.png') no-repeat center/cover;
     }
 
     &:nth-child(9):hover {
-      background: url('../assets/truck1.png') no-repeat center/cover;
+      background: url('../assets/img/excavator_02.png') no-repeat center/cover;
     }
   }
 
