@@ -727,7 +727,7 @@ body {
 }
 
 .equipment__item:nth-child(5):hover {
-  background: url("../assets/img/truck_01.png") no-repeat center/cover;
+  background: url("../assets/img/truck_04.png") no-repeat center/cover;
 }
 
 .equipment__item:nth-child(6):hover {
