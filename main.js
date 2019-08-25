@@ -264,10 +264,3 @@ document.querySelector('.menu-mobile').addEventListener('mousemove', (e) => {
     e.target.style.backgroundColor = section[currentIndexSection].dataset.color;
   } catch (e) {}
 })
-
-// Set wrapper-loader to position unset
-
-setTimeout(() => {
-  document.querySelector('.wrapper-loader').classList.add('wrapper-loader--inactive');
-  document.body.classList.remove("body-hidden");
-}, 4000);
