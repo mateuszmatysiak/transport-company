@@ -59,25 +59,15 @@ const transformBars = () => {
 
 const activeMenu = () => {
   document.body.classList.add("body-hidden");
-  document
-    .querySelector(".menu-mobile")
-    .classList.add("menu-mobile--active-display");
-  setTimeout(() => {
-    document
-      .querySelector(".menu-mobile")
-      .classList.add("menu-mobile--active-opacity");
+  document.querySelector(".menu-mobile").classList.add("menu-mobile--active-display");
+  setTimeout(() => {document.querySelector(".menu-mobile").classList.add("menu-mobile--active-opacity");
   }, 100);
 };
 
 const inActiveMenu = () => {
   document.body.classList.remove("body-hidden");
-  document
-    .querySelector(".menu-mobile")
-    .classList.remove("menu-mobile--active-opacity");
-  setTimeout(() => {
-    document
-      .querySelector(".menu-mobile")
-      .classList.remove("menu-mobile--active-display");
+  document.querySelector(".menu-mobile").classList.remove("menu-mobile--active-opacity");
+  setTimeout(() => {document.querySelector(".menu-mobile").classList.remove("menu-mobile--active-display");
   }, 200);
 };
 
